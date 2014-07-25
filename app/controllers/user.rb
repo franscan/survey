@@ -15,3 +15,7 @@ end
 post '/signup' do
   redirect '/'
 end
+
+get '/logout' do
+  redirect '/'
+end
