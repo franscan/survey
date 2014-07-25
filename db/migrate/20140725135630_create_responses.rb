@@ -1,8 +1,8 @@
 class CreateResponses < ActiveRecord::Migration
   def change
       create_table :responses do |t|
-        t.belongs_to :users
-        t.belongs_to :options
+        t.belongs_to :user
+        t.belongs_to :option
         t.timestamps
       end
   end
