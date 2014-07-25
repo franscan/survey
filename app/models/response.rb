@@ -1,4 +1,4 @@
 class Response < ActiveRecord::Base
-  has_many :options
-  has_many :users
+  belongs_to :option
+  belongs_to :user
 end
