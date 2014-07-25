@@ -6,3 +6,4 @@ end
 post '/login' do
   redirect '/'
 end
+
