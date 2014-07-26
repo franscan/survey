@@ -41,10 +41,10 @@ post '/survey/make' do
 end
 
 post '/survey/take/:survey_id' do
+
   survey = Survey.find(params[:survey_id])
   survey.questions.each do |question|
-    temp = question.id
-    current_user.options << Option.find(params[temp.to_sym])
+    current_user.options << Option.find(params[:"#{question.id}"])
   end
 
 
