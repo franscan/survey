@@ -4,4 +4,31 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+
+
+  $('#add_response').on('click', function(event) {
+    event.preventDefault();
+    console.log('the add response button was clicked')
+    $('#add_option').append('<div><input name="option1" placeholder="option 1"><input type="submit" class="remove_question" value="delete option"></div>')
+    removeOptionQuestion()
+  });
+
+
+
+  $('#add_question').on('click',function(event){
+    event.preventDefault();
+    console.log('will this work')
+    $('#add_option').append('<input name="Question" placeholder="Question"><div><input name="option1" placeholder="option 1"><input type="submit" class="remove_question" value="delete option"></div>')
+
+    removeOptionQuestion()
+  });
+
+  function removeOptionQuestion() {
+    $('.remove_question').on('click',function(event){
+      event.preventDefault();
+      console.log(this)
+      $(this).parent().remove()
+    });
+  }
+  removeOptionQuestion()
 });
