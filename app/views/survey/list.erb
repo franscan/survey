@@ -1,0 +1,8 @@
+<h1>Here are the surveys: </h1>
+<% if @surveys %>
+  <% @surveys.each do |survey| %>
+    <h2><a href="/survey/take/<%=survey.id%>"><%=survey.survey_name%></a></h2>
+  <% end %>
+<% else %>
+  <p>There aren't any surveys yet. <a href="/survey/make">Create a survey here.</a></p>
+<% end %>
