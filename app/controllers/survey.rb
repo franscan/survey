@@ -42,6 +42,13 @@ post '/survey/make' do
 end
 
 post '/survey/take/:survey_id' do
-  current_user.responses << Response.create(user_id: current_user, option_id: params[:question])
+  survey = Survey.find(params[:survey_id])
+  survey.questions.each do |question|
+    temp = question.id
+    current_user.options << Option.find(params[temp.to_sym])
+  end
+
+
+
   erb :"/survey/submitted"
 end

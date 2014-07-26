@@ -6,7 +6,7 @@
     <p><%=question.question%></p>
       <% if question.options %>
         <% question.options.each do |option| %>
-          <input type="radio" name="question" value="<%=option.id%>"><%=option.choice%>
+          <input type="radio" name="<%= question.id %>" value="<%=option.id%>"><%=option.choice%>
         <% end %>
       <% end %>
   <% end %>
