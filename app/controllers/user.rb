@@ -14,7 +14,16 @@ get '/signup' do
 end
 
 post '/signup' do
-  redirect '/'
+  user = User.create(params[:user])
+  errors = []
+  if user.valid?
+    redirect '/'
+  else
+    if user.errors.messages[:email]
+      errors << "This email has already been taken"
+    end
+    erb :_user_form, locals: {url: @url, errors: errors}
+  end
 end
 
 get '/logout' do

@@ -5,3 +5,8 @@
   <input id="password" type="password" name=user[password] value=""><br>
   <input type="submit" value="Submit">
 </form>
+<% if errors != [] %>
+  <% errors.each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>
