@@ -9,7 +9,7 @@ $(document).ready(function() {
   $('#add_response').on('click', function(event) {
     event.preventDefault();
     console.log('the add response button was clicked')
-    $('#add_option').append('<div><input name="option1" placeholder="option 1"><input type="submit" class="remove_question" value="delete option"></div>')
+    $('#add_option').append('<div><input name="survey[questions][][options][]" placeholder="option"><input type="submit" class="remove_question" value="delete option"></div>')
     removeOptionQuestion()
   });
 
@@ -18,7 +18,7 @@ $(document).ready(function() {
   $('#add_question').on('click',function(event){
     event.preventDefault();
     console.log('will this work')
-    $('#add_option').append('<input name="Question" placeholder="Question"><div><input name="option1" placeholder="option 1"><input type="submit" class="remove_question" value="delete option"></div>')
+    $('#add_option').append('<input name="survey[questions][][question]" placeholder="Question"><div><input name="survey[questions][][options][]" placeholder="option"><input type="submit" class="remove_question" value="delete option"></div><div><input name="survey[questions][][options][]" placeholder="option"><input type="submit" class="remove_question" value="delete option"></div>')
 
     removeOptionQuestion()
   });
