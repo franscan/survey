@@ -1,8 +1,8 @@
 <form action="<%= url %>" method="POST">
   <label for="email">E-mail</label>
-  <input id="email" type="email" name=user[email] value=""><br>
+  <input id="email" type="email" name=user[email] value="" required><br>
   <label for="password">Password</label>
-  <input id="password" type="password" name=user[password] value=""><br>
+  <input id="password" type="password" name=user[password] value="" required><br>
   <input type="submit" value="Submit">
 </form>
 <% if errors != [] %>
