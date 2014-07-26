@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   has_many :surveys
   has_many :responses
   has_many :options, through: :responses
-
+  validates :email, uniqueness: true
   include BCrypt
 
   def password
