@@ -1,2 +1,16 @@
-<h1>Eat shit. Take my survey </h1>
-<%=@id%>
+<h1><%=@survey.survey_name%></h1>
+
+<% if @survey.questions %>
+  <form action="/survey/take/<%=@survey.id%>" method="POST">
+  <% @survey.questions.each do |question| %>
+    <p><%=question.question%></p>
+      <% if question.options %>
+        <% question.options.each do |option| %>
+          <input type="radio" name="question" value="<%=option.id%>"><%=option.choice%>
+        <% end %>
+      <% end %>
+  <% end %>
+  <br>
+  <input type="submit" value="submit">
+  </form>
+<% end %>

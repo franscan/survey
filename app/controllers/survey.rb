@@ -1,10 +1,11 @@
 get '/survey/take' do
-  erb :"survey/take"
+  @surveys = Survey.all
+  erb :"survey/list"
 end
 
-get '/survey/take/:id' do
+get '/survey/take/:survey_id' do
 
-  @id = params[:id]
+  @survey = Survey.find_by(id: params[:survey_id])
   erb :"survey/take"
 end
 
@@ -38,5 +39,9 @@ post '/survey/make' do
   else
     erb :"/survey/make"
   end
+end
 
+post '/survey/take/:survey_id' do
+  current_user.responses << Response.create(user_id: current_user, option_id: params[:question])
+  erb :"/survey/submitted"
 end
