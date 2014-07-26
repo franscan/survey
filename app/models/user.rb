@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :surveys
   has_many :responses
   has_many :options, through: :responses
+
   include BCrypt
 
   def password
@@ -13,9 +14,11 @@ class User < ActiveRecord::Base
     self.password_hash = @password
   end
 
-  def login
+  def self.login(params)
     user = User.find_by_email(params[:email])
-    return user.id if user.password == params[:password]
+    if user
+      return user.id if user.password == params[:password]
+    end
     nil
   end
 

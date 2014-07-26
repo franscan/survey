@@ -4,6 +4,7 @@ get '/login' do
 end
 
 post '/login' do
+  session[:user_id] = User.login(params[:user])
   redirect '/'
 end
 
