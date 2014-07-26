@@ -15,6 +15,7 @@ get '/survey/make' do
 end
 
 get '/survey/results/:survey_id' do
+  @survey = Survey.find(params[:survey_id])
 
   erb :"survey/results"
 end

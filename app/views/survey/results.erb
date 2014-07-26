@@ -1,1 +1,16 @@
-<h1>Survey results</h1>
+<h1>Survey results for: <%=@survey.survey_name%></h1>
+
+<%@survey.questions.each do |question|%>
+  <p><%=question.question%></p>
+  <ul>
+  <%question.options.each do |option|%>
+    <li><%=option.choice%></li>
+    <%count=0%>
+    <%option.responses.each do |response| %>
+      <%count+=1%>
+    <%end%>
+    <p><%=count%></p>
+  <%end%>
+</ul>
+<%end%>
+
