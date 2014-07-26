@@ -1,3 +1,7 @@
+get '/survey/take' do
+  erb :"survey/take"
+end
+
 get '/survey/take/:id' do
 
   @id = params[:id]
@@ -15,12 +19,12 @@ get '/survey/results/:survey_id' do
 end
 
 get '/survey/show' do
-
+  @surveys = Survey.where(user_id: current_user.id)
   erb :"/survey/show"
 end
 
 post '/survey/make' do
-  survey = Survey.new(survey_name: params[:survey_name], user_id: 1)
+  survey = Survey.new(survey_name: params[:survey_name], user_id: current_user.id)
   question = Question.new(question: params[:question])
   option = Option.new(choice: params[:option])
   question.options << option

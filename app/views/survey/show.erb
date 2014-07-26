@@ -1,1 +1,8 @@
-<h1>Show me all the results of the surveys I've created</h1>
+<h1>Here are your surveys: </h1>
+<% if @surveys %>
+  <% @surveys.each do |survey| %>
+    <h2><a href=""><%=survey.survey_name%></a></h2>
+  <% end %>
+<% else %>
+  <p>You haven't created any surveys yet. <a href="/survey/make">Create a survey here.</a></p>
+<% end %>
