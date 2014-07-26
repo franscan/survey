@@ -15,10 +15,11 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title>Gorilla Survey</title>
+  <title>Survey Gorilla</title>
 </head>
 <body>
   <div id="nav">
+    <h1 id="header">Survey Gorilla</h1>
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/survey/show/user_id">My surveys</a></li>
@@ -27,6 +28,8 @@
       <li><a href="/logout">Logout</a></li>
     </ul>
   </div>
+  <div id="container">
   <%= yield %>
+  </div>
 </body>
 </html>
