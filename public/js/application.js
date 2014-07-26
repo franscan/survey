@@ -9,7 +9,8 @@ $(document).ready(function() {
   $('#add_response').on('click', function(event) {
     event.preventDefault();
     console.log('the add response button was clicked')
-    $('#add_option').append('<input name="option4" placeholder="option 4">')
+    $('#add_option').append('<div><input name="option1" placeholder="option 1"><input type="submit" class="remove_question" value="delete option"></div>')
+    removeOptionQuestion()
   });
 
 
@@ -17,15 +18,17 @@ $(document).ready(function() {
   $('#add_question').on('click',function(event){
     event.preventDefault();
     console.log('will this work')
-    $('#add_option').append('<input name="Question" placeholder="Question"><input name="option1" placeholder="option 1"><input name="option2" placeholder="option 2"><input name="option3" placeholder="option 3"><input name="option4" placeholder="option 4">')
+    $('#add_option').append('<input name="Question" placeholder="Question"><div><input name="option1" placeholder="option 1"><input type="submit" class="remove_question" value="delete option"></div>')
 
+    removeOptionQuestion()
   });
 
-
-  $('.remove_question').on('click',function(event){
-    event.preventDefault();
-    console.log(this)
-    $(this).parent().remove()
-  });
-
+  function removeOptionQuestion() {
+    $('.remove_question').on('click',function(event){
+      event.preventDefault();
+      console.log(this)
+      $(this).parent().remove()
+    });
+  }
+  removeOptionQuestion()
 });
