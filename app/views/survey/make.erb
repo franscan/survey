@@ -1,2 +1,40 @@
 <h1>Eat shit. make my survey </h1>
 <%=params[:user_id]%>
+
+
+<form action="" method='POST'>
+  <input name="Title" placeholder="Survey Title">
+  <p id="question_area">
+    <div id="add_option">
+      <input name="Question" placeholder="Question">
+
+      <div>
+        <input name="option1" placeholder="option 1">
+        <input type="submit" class="remove_question" value="delete option">
+      </div>
+
+      <div>
+        <input name="option1" placeholder="option 1">
+        <input type="submit" class='remove_question' value="delete option">
+      </div>
+
+      <div>
+        <input name="option1" placeholder="option 1">
+        <input type="submit" class='remove_question' value="delete option">
+      </div>
+
+      <div>
+        <input name="option1" placeholder="option 1">
+        <input type="submit" class='remove_question' value="delete option">
+      </div>
+
+    </div>
+    <br>
+    <input type="submit" id="add_response" value="Add option">
+    <br>
+  </p>
+  <input type='submit' id='add_question' value='add question'>
+  <p>
+    <input type="submit" name="Sumbit">
+  </p>
+</form>
