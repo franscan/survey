@@ -25,17 +25,16 @@ get '/survey/show' do
 end
 
 post '/survey/make' do
-  survey = Survey.new(survey_name: params[:survey_name], user_id: current_user.id)
-  question = Question.new(question: params[:question])
-  option = Option.new(choice: params[:option])
-  question.options << option
-  survey.questions << question
-  survey.save
-  question.save
-  option.save
+  survey = Survey.create(survey_name: params[:survey][:survey_name], user_id: current_user.id)
+    params[:survey][:questions].each do |question|
+      question_object = Question.create(survey_id: survey.id, question: question[:question])
+      question[:options].each do |option|
+        Option.create(question_id: question_object.id, choice: option)
+      end
+    end
 
   if survey.save
-    redirect to('/survey/show')
+    redirect '/survey/show'
   else
     erb :"/survey/make"
   end
@@ -51,4 +50,11 @@ post '/survey/take/:survey_id' do
 
 
   erb :"/survey/submitted"
+
+  #  if params[:post]
+  #   user.taken_surveys << @survey
+  #   params[:post].values.each do |answer_id|
+  #     user.chosen_answers << Answer.find(answer_id
+  #   end
+  # end
 end
