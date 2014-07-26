@@ -3,15 +3,29 @@
 
 
 <form action="/survey/make" method='POST'>
-  <input name="survey_name" placeholder="Survey Title">
+  <input name="survey[survey_name]" placeholder="Survey Title">
   <p id="question_area">
     <div id="add_option">
-      <input name="question" placeholder="Question">
-
+      <input name="survey[questions][][question]" placeholder="Question">
       <div>
-        <input name="option" placeholder="option">
+        <input name="survey[questions][][options][]" placeholder="option">
         <input type="submit" class="remove_question" value="delete option">
       </div>
+      <div>
+        <input name="survey[questions][][options][]" placeholder="option">
+        <input type="submit" class="remove_question" value="delete option">
+      </div>
+
+      <input name="survey[questions][][question]" placeholder="Question">
+      <div>
+        <input name="survey[questions][][options][]" placeholder="option">
+        <input type="submit" class="remove_question" value="delete option">
+      </div>
+      <div>
+        <input name="survey[questions][][options][]" placeholder="option">
+        <input type="submit" class="remove_question" value="delete option">
+      </div>
+    </div>
 <!--
       <div>
         <input name="question1[:option2]" placeholder="option">
