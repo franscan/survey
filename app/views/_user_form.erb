@@ -7,6 +7,11 @@
 </form>
 <% if errors != [] %>
   <% errors.each do |error| %>
-    <p><%= error %></p>
+    <div id="error">
+      <p><%= error %></p>
+    </div>
+    <div id="errorgorilla">
+      <a href="http://imgur.com/riPc9FN"><img src="http://i.imgur.com/riPc9FN.png" title="Hosted by imgur.com" /></a>
+    </div>
   <% end %>
 <% end %>

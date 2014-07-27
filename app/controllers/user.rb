@@ -7,7 +7,7 @@ post '/login' do
   session[:user_id] = User.login(params[:user])
   if session[:user_id] == nil
     url = "/login"
-    errors = ["username or password is incorrect"]
+    errors = ["Username or password is incorrect"]
     erb :_user_form, locals: {url: url, errors: errors}
   else
     redirect '/'

@@ -4,40 +4,63 @@
 }
 
 #header {
+  font-family: "Brush Script MT", cursive;
+  font-weight: 100;
   font-size: 60px;
+  color: #3498db;
   padding-left: 120px;
   float: left;
+  margin: 23px 0 23px 0;
 }
+
 ul {
-    position: relative;
     list-style-type: none;
 }
 
 body {
-  background-color: #04859D;
+  background-color: #ecf0f1;
 }
 #nav {
-  background-color: #49A4B6;
+  background-color: #34495e;
   position: fixed;
   width: 100%;
   top: 0;
 }
 
+
 #nav li {
+  width: 50px;
+  border-radius: 2px;
+  border: solid 1px;
+  color: #3498db;
   text-align: right;
   padding: 3px 12px 3px 0;
+  float: right;
+  margin-right: 15px;
+  border-color: #bdc3c7;
+  text-align: center;
 }
 
 a {
   text-decoration: none;
 }
 
-a, a:visited {
-  color: #1240AB;
+a:visited {
+  color: #3498db;
 }
 
 a:hover {
   color: #222;
+}
+
+#error {
+  color: red;
+  font-variant: small-caps;
+  font-size: 20px;
+}
+
+#errorgorilla {
+
 }
 
 /*-------------------COLORS-----------------------------------------*/
@@ -58,3 +81,4 @@ a:hover {
 .color-secondary-2-2 { color: #2ABC65 }
 .color-secondary-2-3 { color: #008E39 }
 .color-secondary-2-4 { color: #006F2D }
+/*-------------------COLORS-----------------------------------------*/
