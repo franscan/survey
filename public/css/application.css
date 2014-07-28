@@ -141,6 +141,66 @@ h3 {
   font-size: 20px;
 }
 
+/*-----------------------MAKE SURVEY----------------------------*/
+form {
+  background-color: rgba(149,165,166,0.2);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 0 30px 0;
+  width: 700px;
+}
 
 
+#surv_title {
+  border: none;
+  height: 45px;
+  padding-left: 5px;
+  width: 300px;
+
+}
+
+#question_area {
+}
+
+#quest {
+  border: none;
+  height: 35px;
+  padding-left: 5px;
+  width: 300px;
+}
+
+#opt {
+  border: none;
+  height: 25px;
+  padding-left: 5px;
+}
+
+.remove_question {
+  background-color: rgba(52, 152, 219, 0.7);
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  font-weight: lighter;
+  height: 25px;
+}
+
+#add_response, #add_question, #submit {
+  background-color: rgba(52, 152, 219, 0.7);
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  font-weight: lighter;
+  height: 25px;
+}
+
+#submit {
+  font-size: 16px;
+  height: 30px;
+}
+
+footer {
+  height: 40px;
+}
+
+/*-----------------------TAKE SURVEY----------------------------*/
 

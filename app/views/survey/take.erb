@@ -9,6 +9,8 @@
       <% if question.options %>
         <% question.options.each do |option| %>
           <input type="radio" name="<%= question.id %>" value="<%=option.id%>"><%=option.choice%>
+          <br>
+          <br>
         <% end %>
       <% end %>
   <% end %>
