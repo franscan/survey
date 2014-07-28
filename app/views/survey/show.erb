@@ -1,4 +1,6 @@
-<h1>Here are your surveys: </h1>
+<div id="subtitle">
+<h3>Here are your surveys:</h3>
+</div>
 <% if @surveys %>
   <% @surveys.each do |survey| %>
     <h2><a href=""><%=survey.survey_name%></a></h2>

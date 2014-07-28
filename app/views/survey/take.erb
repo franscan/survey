@@ -1,4 +1,6 @@
-<h1><%=@survey.survey_name%></h1>
+<div id="subtitle">
+<h3><%=@survey.survey_name%></h3>
+</div>
 
 <% if @survey.questions %>
   <form action="/survey/take/<%=@survey.id%>" method="POST">
